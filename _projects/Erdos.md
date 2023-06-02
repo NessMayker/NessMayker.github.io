@@ -1,9 +1,9 @@
 ---
 layout: page
-title: CAFA 5 - protein function prediction
-description: Kaggle Research Competition 
+title: Erdös 
+description: Data Science Boot Camp
 img: assets/img/protein.png
-importance: 1
+importance: 2
 category: Data Science
 ---
 
@@ -31,10 +31,4 @@ Write about Dataset here.
 <div class="caption">
     Top 100 GO ID counts.
 </div>
-
-Write about EDA here.
-
-Write about embeddings here.
-
-Write about results here.
 

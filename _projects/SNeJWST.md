@@ -1,10 +1,10 @@
 ---
 layout: page
-title: CAFA 5 - protein function prediction
-description: Kaggle Research Competition 
+title: SNeJWST
+description: Supernova in JWST 
 img: assets/img/protein.png
 importance: 1
-category: Data Science
+category: Research
 ---
 
 
@@ -31,10 +31,4 @@ Write about Dataset here.
 <div class="caption">
     Top 100 GO ID counts.
 </div>
-
-Write about EDA here.
-
-Write about embeddings here.
-
-Write about results here.
 
