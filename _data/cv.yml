@@ -13,7 +13,7 @@
   contents:
     - title: PhD
       institution: The Ohio State University
-      year: Expected Spring 2025
+      year: Expected 2025
       # description:
       #   - Description 1.
       #   - Description 2.
@@ -21,17 +21,16 @@
       #     contents:
       #       - Sub-description 1.
       #       - Sub-description 2.
-    - title: Masters of Science
+    - title: Masters of Science in Astronomy
       institution: The Ohio State University
       year: 2023
       # description:
       #   - Description 1.
       #   - Description 2.
-    - title: Bachelors of Science
+    - title: Bachelors of Science in Physics and Astrophysics
       institution: The Ohio State University
       year: 2019
-        - Majored in Physics and Astrophysics
-        - Graduated summa cumme laude with research distinction
+
 
 # - title: Experience
 #   type: time_table
