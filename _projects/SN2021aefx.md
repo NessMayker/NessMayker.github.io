@@ -2,7 +2,7 @@
 layout: page
 title: SN2021aefx
 description: 
-img: assets/img/protein.png
+img: assets/img/SN2021aefx.png
 importance: 2
 category: Research
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Erdös 
 description: Data Science Boot Camp
-img: assets/img/protein.png
+img: assets/img/erdos.jpeg
 importance: 2
 category: Data Science
 ---
