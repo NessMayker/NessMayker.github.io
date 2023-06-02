@@ -1,9 +1,9 @@
 ---
 layout: page
-title: SN2021aefx
-description: Nebular-phase JWST Imaging of SN Ia 2021aefx 
-img: assets/img/SN2021aefx.png
-importance: 2
+title: SNeCO
+description: Supernova in ALMA
+img: assets/img/protein.png
+importance: 4
 category: Research
 ---
 
