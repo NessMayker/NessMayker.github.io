@@ -7,21 +7,44 @@ importance: 2
 category: Data Science
 ---
 
+The Erdös Institute is a collaboration between multiple universities that helps PhDs find jobs in industry. They offer a data science boot camp twice a year.
+
+I attended the boot camp in May of 2023 and learned a wide variety of data science skills.
+
+Data Collection
+There are some wonderful websites that provide datasets for research  (such as Kaggle.com), but sometimes you have to go out and find your own data. We learned how to scrape websites for data using BeautifulSoup. This process involves parsing the html on keywords.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/CAFA5.jpeg" title="CAFA5" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/BeautifulSoup.png" title="CAFA5" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    The fifth iteration of the Critical Assessment of protein Function Annotation (CAFA) Kaggle competition.
+    Using the web developer tools to access the html of a website.
 </div>
 
-I entered into the CAFA 5 Kaggle competition as part of my final project for the Spring 2023 Erdös Data Science bootcamp. 
+Linear Regression 
+-simple
+-multiple
 
-Write about CAFA 5 here.
+Categorical Variables
+-one-hot encoding
 
-Write about Dataset here.
+Forecasting
+
+Classification
+
+Confusion Matrix
+
+Logistic regression
+
+Desicion tree/random forest
+
+Neural Networks
+
+
+
+
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
