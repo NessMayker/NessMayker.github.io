@@ -5,7 +5,7 @@ permalink: /projects/
 # description: A growing collection of your cool projects.
 nav: true
 nav_order: 2
-display_categories: [Data Science, Research, Fun]
+display_categories: [Deep Learning, Data Science, Research, Fun]
 horizontal: false
 ---
 
