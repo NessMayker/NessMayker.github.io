@@ -18,10 +18,10 @@ category: Deep Learning
 ></iframe> -->
 
 <script type= "module"
-src = https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
+src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
+<gradio-app src="https://nessmaykerchen-catvsdogclassifier.hf.space/"></gradio-app>
 </script>
 
-<gradio-app src="https://nessmaykerchen-catvsdogclassifier.hf.space/"></gradio-app>
 
 
 <!-- <script>
