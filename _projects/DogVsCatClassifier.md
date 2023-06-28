@@ -9,7 +9,7 @@ category: Deep Learning
 
 <input id="photo" type="file">
 <div id="results"></div>
-<script>
+<!-- <script>
   async function loaded(reader) {
     const response = await fetch('https://nessmaykerchen-catvsdogclassifier.hf.space/', {
       method: "POST", body: JSON.stringify({ "data": [reader.result] }),
@@ -25,4 +25,23 @@ category: Deep Learning
     reader.readAsDataURL(photo.files[0]);
   }
   photo.addEventListener('input', read);
+</script> -->
+<script>
+import { client } from "@gradio/client";
+
+
+async function run() {
+
+	const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
+	const exampleImage = await response_0.blob();
+						
+	const app = await client("https://nessmaykerchen-catvsdogclassifier.hf.space/");
+	const result = await app.predict("/predict", [
+				exampleImage, 	// blob in 'img' Image component
+	]);
+
+	console.log(result?.data);
+}
+
+run();
 </script>
