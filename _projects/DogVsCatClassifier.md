@@ -10,12 +10,19 @@ category: Deep Learning
 <input id="photo" type="file">
 <div id="results"></div>
 
-<iframe
+<!-- <iframe
     src="https://nessmaykerchen-catvsdogclassifier.hf.space/"
     frameborder="0"
     width="850"
     height="450"
-></iframe>
+></iframe> -->
+
+<script type= "module"
+src = https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
+</script>
+
+<gradio-app src="https://<space-subdomain>.hf.space"></gradio-app>
+
 
 <!-- <script>
   async function loaded(reader) {
