@@ -21,7 +21,7 @@ category: Deep Learning
 src = https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
 </script>
 
-<gradio-app src="https://<space-subdomain>.hf.space"></gradio-app>
+<gradio-app src="https://nessmaykerchen-catvsdogclassifier.hf.space/"></gradio-app>
 
 
 <!-- <script>
