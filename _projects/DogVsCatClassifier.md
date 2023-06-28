@@ -7,15 +7,9 @@ importance: 1
 category: Deep Learning
 ---
 
-<input id="photo" type="file">
-<div id="results"></div>
+I started taking the Practical Deep Learning course from fast.ai (https://course.fast.ai/).
 
-<!-- <iframe
-    src="https://nessmaykerchen-catvsdogclassifier.hf.space/"
-    frameborder="0"
-    width="850"
-    height="450"
-></iframe> -->
+The first two lessons introduce a simple image classifier that checks if an image is a cat or a dog. Followng the tutorial, I reproduce the classifier and make an interactive predicter using a huggingface space and gradio (https://huggingface.co/spaces/NessMaykerChen/CatVsDogClassifier).
 
 <script type= "module"
 src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
@@ -23,44 +17,6 @@ src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
 
 <gradio-app src="https://nessmaykerchen-catvsdogclassifier.hf.space/"></gradio-app>
 
+The classifier performs well when the images are cats or dogs, but has not been trained to classify other images, so it basically tries to measure how dog like or cat like the rest of the examples are and returns some humourous results.
 
-
-
-<!-- <script>
-  async function loaded(reader) {
-    const response = await fetch('https://hf.space/embed/nessmaykerchen/catvsdogclassifier/+/api/predict', {
-      method: "POST", body: JSON.stringify({ "data": [reader.result] }),
-      headers: { "Content-Type": "application/json" }
-    });
-    const json = await response.json();
-    const label = json['data'][0]['confidences'][0]['label'];
-    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
-  }
-  function read() {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => loaded(reader))
-    reader.readAsDataURL(photo.files[0]);
-  }
-  photo.addEventListener('input', read);
-</script> -->
-
-
-<!-- <script>
-import { client } from "@gradio/client";
-
-<!-- 
-async function run() {
-
-	const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
-	const exampleImage = await response_0.blob();
-						
-	const app = await client("https://nessmaykerchen-catvsdogclassifier.hf.space/");
-	const result = await app.predict("/predict", [
-				exampleImage, 	// blob in 'img' Image component
-	]);
-
-	console.log(result?.data);
-}
-
-run();
-</script> --> -->
+I'm looking forward to building more sophisticated image classifiers in the future!
