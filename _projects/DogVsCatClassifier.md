@@ -9,7 +9,15 @@ category: Deep Learning
 
 <input id="photo" type="file">
 <div id="results"></div>
-<script>
+
+<iframe
+    src="https://nessmaykerchen-catvsdogclassifier.hf.space/"
+    frameborder="0"
+    width="850"
+    height="450"
+></iframe>
+
+<!-- <script>
   async function loaded(reader) {
     const response = await fetch('https://hf.space/embed/nessmaykerchen/catvsdogclassifier/+/api/predict', {
       method: "POST", body: JSON.stringify({ "data": [reader.result] }),
@@ -25,7 +33,7 @@ category: Deep Learning
     reader.readAsDataURL(photo.files[0]);
   }
   photo.addEventListener('input', read);
-</script>
+</script> -->
 
 
 <!-- <script>
