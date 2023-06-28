@@ -21,7 +21,7 @@ src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
     src="https://nessmaykerchen-catvsdogclassifier.hf.space/"
     frameborder="0"
     width="850"
-    height="650"
+    height="550"
 ></iframe>
 
 The classifier performs well when the images are cats or dogs, but has not been trained to classify other images, so it basically tries to measure how dog like or cat like the rest of the examples are and returns some humourous results.
