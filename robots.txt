@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: /sitemap.xml
+Sitemap: https://nessmayker.github.io/NessMaykerChen.github.io//sitemap.xml
