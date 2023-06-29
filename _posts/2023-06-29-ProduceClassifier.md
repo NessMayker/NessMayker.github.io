@@ -3,8 +3,8 @@ layout: post
 title:  Produce Classifier
 date: 2023-06-29
 description: A simple image classifier using fast.ai and the Fruits 360 dataset
-tags: "DeepLearning", "fastai"
-categories: "DeepLearning"
+tags: DeepLearning fastai
+categories: DeepLearning
 thumbnail: assets/img/Fruits360.jpg
 ---
 
