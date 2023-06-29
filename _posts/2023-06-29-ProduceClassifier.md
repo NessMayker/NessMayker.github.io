@@ -8,7 +8,7 @@ categories: DeepLearning
 thumbnail: assets/img/fruits360.jpg
 ---
 
-I started taking the Practical Deep Learning course from fast.ai (https://course.fast.ai/) and I have been so excited to practice what I have been learning.
+I'm currently taking the Practical Deep Learning course from fast.ai (https://course.fast.ai/) and I have been so excited to practice what I have been learning.
 
 For this project I am expanding on the Dog vs Cat classifier, instead training a model to classify fruit using the Fruits 360 dataset as my training data.
 
