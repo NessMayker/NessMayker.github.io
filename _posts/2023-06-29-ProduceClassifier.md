@@ -5,7 +5,7 @@ date: 2023-06-29
 description: A simple image classifier using fast.ai and the fruits360 dataset
 tags: DeepLearning fastai
 categories: DeepLearning
-thumbnail: assets/img/Fruits360.jpg
+thumbnail: assets/img/fruits360.jpg
 ---
 
 I started taking the Practical Deep Learning course from fast.ai (https://course.fast.ai/) and I have been so excited to practice what I have been learning.
