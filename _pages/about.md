@@ -1,7 +1,7 @@
 ---
 layout: about
 title: about
-permalink: /NessMaykerChen.github.io
+permalink: /
 subtitle: #<a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
