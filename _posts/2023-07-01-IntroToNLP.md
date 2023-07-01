@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  intro to natural language processing (NLP)
-date: 2023-06-29
+title:  Intro to natural language processing (NLP)
+date: 2023-07-01
 description: Introcuding NLP with Patent Phrase Matching 
 tags: DeepLearning NLP
 categories: DeepLearning
@@ -15,7 +15,7 @@ The dataset consists of sets of two phrases that have been scored from 0-1 depen
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide1.jpeg class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide1.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -30,7 +30,7 @@ Familiar text is often separated word for word like this Cecilia Payne-Gaposchki
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide2.jpeg class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide2.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -47,7 +47,7 @@ The results show that as the model trains it performs slightly better over the f
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide3.jpeg class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide3.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -58,7 +58,7 @@ I was surprised that the patentSBERT model did not outperform the dberta3 baseli
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide4.jpeg  class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide4.jpeg" title = ""  class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
