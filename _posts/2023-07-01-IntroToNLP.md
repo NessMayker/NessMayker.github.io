@@ -8,14 +8,14 @@ categories: DeepLearning
 thumbnail: assets/img/NLPpatent/Slide0.png
 ---
 
-The Practical Deep Learning for Coders class introduces NLP via the <a href=https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching>U.S. Patent Phrase to Phrase Matching</a> Kaggle Competition. This competition aims to match key phrases in patent documents in an effort to more easily identify if a patent has been described before.
+The Practical Deep Learning for Coders class introduces NLP via the U.S. Patent Phrase to Phrase Matching Kaggle Competition. This competition aims to match key phrases in patent documents in an effort to more easily identify if a patent has been described before.
 
 The dataset consists of sets of two phrases that have been scored from 0-1 depending on the level of their similarity. The idea is to train a language model to predict what the phrases scores would be without knowing in advance.
 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide1.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide2.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -30,7 +30,7 @@ Familiar text is often separated word for word like this Cecilia Payne-Gaposchki
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide2.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide1.jpeg" title = "" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -66,6 +66,6 @@ To improve this model I would first try to look at different learning rates. The
 
 One thing I have noticed in my very recent explorations into modeling, is that it isn't always clear or intuitive how to adjust a model to improve performance. When my team participated in the CAFA5 kaggle competition last month, we were unable to ever improve on the baseline model and we weren't exactly sure why the model was outperforming all the others that seemed to have a lot more going for them.
 
-I hope that with continued study, I will learn more about model improvement and I hope to develop more intuition about the process.
+I hope that with continued study, I will learn more about model improvement and develop more intuition about the process.
 
 
