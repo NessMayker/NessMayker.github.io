@@ -1,5 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://nessmayker.github.io/NessMaykerChen.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://nessmayker.github.io/NessMaykerChen.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-30T00:02:36+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">Produce Classifier</title><link href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier/" rel="alternate" type="text/html" title="Produce Classifier" /><published>2023-06-29T00:00:00+00:00</published><updated>2023-06-29T00:00:00+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier</id><content type="html" xml:base="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier/"><![CDATA[<p>I’m currently taking the “Practical Deep Learning for Coders” course from fast.ai (https://course.fast.ai/) and I have been so excited to practice what I have been learning.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://nessmayker.github.io/NessMaykerChen.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://nessmayker.github.io/NessMaykerChen.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2023-07-01T20:34:38+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Intro to natural language processing (NLP)</title><link href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/IntroToNLP/" rel="alternate" type="text/html" title="Intro to natural language processing (NLP)" /><published>2023-07-01T00:00:00+00:00</published><updated>2023-07-01T00:00:00+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/IntroToNLP</id><content type="html" xml:base="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/IntroToNLP/"><![CDATA[<p>The Practical Deep Learning for Coders class introduces NLP via the  &lt;a href=”https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching”&gt;U.S. Patent Phrase to Phrase Matching&lt;/a&gt; Kaggle Competition. This competition aims to match key phrases in patent documents in an effort to more easily identify if a patent has been described before.</p>
+
+<p>The dataset consists of sets of two phrases that have been scored from 0-1 depending on the level of their similarity. The idea is to train a language model to predict what the phrases scores would be without knowing in advance.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/NLPpatent/Slide1.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    A glimpse into the dataset.
+</div>
+
+<p>To do this we split the dataset into a training and a testing set. The model learns from the training set and then is scored via the testing set. There are many different ways to score a model, but it is common to include a “loss” and a “metric”. The loss is a score that is meaningful to the computer, it is the difference between the predicted and actual values. The model tries to minimize that loss. The metric is used to interpret the results of the model. Some examples of metrics are accuracy or false positive rates. For this project we are using the Pearson Correlation Coefficient. This number equals 1 when the model makes a correct prediction.</p>
+
+<p>We tackled this problem by joining the two phrases along with their patent classification entry and feeding them into a transformer. Because computers speak a different kind of language than you or I, we need to convert the text to numerical values.</p>
+
+<p>Familiar text is often separated word for word like this Cecilia Payne-Gaposchkin quote shown on the image on the left, while unfamiliar text is often broken into smaller pieces such as the title of my last paper shown in the middle. These texts are then converted to numbers that represent indexes in the model’s vocabulary as shown on the right.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/NLPpatent/Slide2.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Examples of tokenization and numericalization of text ran through a transformer.
+</div>
+
+<p>For the first round of modeling we used the dberta transformer. This transformer is a machine learning model that has already been trained with language. This means that it should perform pretty good right out of the box! But the cool part is that we get to continue to train it more on our own dataset so that it learns to make better predictions as it becomes familiar with the data we are using.</p>
+
+<p>When we train the model is to keep a subset of the data separate. We call this the validation set. We allow the model to assign different levels of importance (or weights) to each entry in the training set and then we score its predictions on the validation set. The model adjusts the weights based on the results from the scoring.</p>
+
+<p>For the first model we use a validation set that is randomly chosen. For the next model we tried, we more carefully selected the validation set, keeping only entries for the validation set that did not occur in the training set. Before, any phrase might have shown up in both the training set and validation set when the validation set was randomly chosen, this time we decide to keep the phrases in the validation set separate from the training set. We ran both of these models for four training cycles.</p>
+
+<p>The results show that as the model trains it performs slightly better over the first three epochs. The validation loss values are decreasing and the pearson value is increasing closer to 1. On the fourth epoch they seem to stop improving. Interestingly the unique values validation set did not improve the model over the long run, although for the first iteration the model performed slightly better on this validation set.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/NLPpatent/Slide3.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>I decided to play around with another transformer called patentSBERT. I was excited about this one because it is a language model trained specifically for patent documents. I repeated the same two experiments as before, one with a randomly chosen validation set and one that had only unique phrases.</p>
+
+<p>I was surprised that the patentSBERT model did not outperform the dberta3 baseline model, especially because it was trained specifically for patent documents. Overall these results are similar to if not a little worse than the earlier rounds.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/NLPpatent/Slide4.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>To improve this model I would first try to look at different learning rates. The learning rate tells the computer how much to adjust the weights after each epoch. I would also look at different transformer models, although the baseline model seems to be working quite well.</p>
+
+<p>One thing I have noticed in my very recent explorations into modeling, is that it isn’t always clear or intuitive how to adjust a model to improve performance. When my team participated in the CAFA5 kaggle competition last month, we were unable to ever improve on the baseline model and we weren’t exactly sure why the model was outperforming all the others that seemed to have a lot more going for them.</p>
+
+<p>I hope that with continued study, I will learn more about model improvement and I hope to develop more intuition about the process.</p>]]></content><author><name></name></author><category term="DeepLearning" /><category term="DeepLearning" /><category term="NLP" /><summary type="html"><![CDATA[Introcuding NLP with Patent Phrase Matching]]></summary></entry><entry><title type="html">Produce Classifier</title><link href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier/" rel="alternate" type="text/html" title="Produce Classifier" /><published>2023-06-29T00:00:00+00:00</published><updated>2023-06-29T00:00:00+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier</id><content type="html" xml:base="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier/"><![CDATA[<p>I’m currently taking the <a href="https://course.fast.ai/">“Practical Deep Learning for Coders”</a> course from fast.ai and I have been so excited to practice what I have been learning.</p>
 
 <p>For this project I am expanding on the Dog vs Cat classifier, instead training a model to classify fruit using the Fruits 360 dataset as my training data.</p>
 
@@ -21,7 +121,7 @@ src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
 
 <p>The classifier performs much better when the images are very closely related to those in the training set. I am curious to know if the largest room for improvement in the model could be found by using a deeper neural net, or by introducing more diversity in the training set.</p>
 
-<p>I definitely want to play around with this more in the future. For now, I need to pivot to NLP to keep up with the fast.ai course. :)</p>]]></content><author><name></name></author><category term="DeepLearning" /><category term="DeepLearning" /><category term="fastai" /><summary type="html"><![CDATA[A simple image classifier using fast.ai and the fruits360 dataset]]></summary></entry><entry><title type="html">Dog vs Cat</title><link href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/DogVsCat/" rel="alternate" type="text/html" title="Dog vs Cat" /><published>2023-06-28T00:00:00+00:00</published><updated>2023-06-28T00:00:00+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/DogVsCat</id><content type="html" xml:base="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/DogVsCat/"><![CDATA[<p>I started taking the Practical Deep Learning course from fast.ai (https://course.fast.ai/).</p>
+<p>I definitely want to play around with this more in the future. For now, I need to pivot to NLP to keep up with the fast.ai course. :)</p>]]></content><author><name></name></author><category term="DeepLearning" /><category term="DeepLearning" /><category term="fastai" /><category term="ImageClassification" /><summary type="html"><![CDATA[A simple image classifier using fast.ai and the fruits360 dataset]]></summary></entry><entry><title type="html">Dog vs Cat</title><link href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/DogVsCat/" rel="alternate" type="text/html" title="Dog vs Cat" /><published>2023-06-28T00:00:00+00:00</published><updated>2023-06-28T00:00:00+00:00</updated><id>https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/DogVsCat</id><content type="html" xml:base="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/DogVsCat/"><![CDATA[<p>I started taking the Practical Deep Learning course from fast.ai (https://course.fast.ai/).</p>
 
 <p>The first two lessons introduce a simple image classifier that checks if an image is a cat or a dog. Followng the tutorial, I reproduce the classifier and make an interactive predicter using a huggingface space and gradio (https://huggingface.co/spaces/NessMaykerChen/CatVsDogClassifier).</p>
 
@@ -35,4 +135,4 @@ src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
 
 <p>The classifier performs well when the images are cats or dogs, but has not been trained to classify other images, so it basically tries to measure how dog like or cat like the rest of the examples are and returns some humourous results.</p>
 
-<p>I’m looking forward to building more sophisticated image classifiers in the future!</p>]]></content><author><name></name></author><category term="DeepLearning" /><category term="DeepLearning" /><category term="fastai" /><summary type="html"><![CDATA[A simple image classifier using fast.ai]]></summary></entry></feed>
+<p>I’m looking forward to building more sophisticated image classifiers in the future!</p>]]></content><author><name></name></author><category term="DeepLearning" /><category term="DeepLearning" /><category term="fastai" /><category term="ImageClassification" /><summary type="html"><![CDATA[A simple image classifier using fast.ai]]></summary></entry></feed>
