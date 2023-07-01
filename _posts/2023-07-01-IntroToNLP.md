@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Intro to natural language processing (NLP)
+title:  Intro to Natural Language Processing (NLP)
 date: 2023-07-01
 description: Introcuding NLP with Patent Phrase Matching 
 tags: DeepLearning NLP
@@ -8,7 +8,7 @@ categories: DeepLearning
 thumbnail: assets/img/NLPpatent/Slide0.png
 ---
 
-The Practical Deep Learning for Coders class introduces NLP via the  <a href=”https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching”>U.S. Patent Phrase to Phrase Matching</a> Kaggle Competition. This competition aims to match key phrases in patent documents in an effort to more easily identify if a patent has been described before.
+The Practical Deep Learning for Coders class introduces NLP via the <a href=https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching>U.S. Patent Phrase to Phrase Matching</a> Kaggle Competition. This competition aims to match key phrases in patent documents in an effort to more easily identify if a patent has been described before.
 
 The dataset consists of sets of two phrases that have been scored from 0-1 depending on the level of their similarity. The idea is to train a language model to predict what the phrases scores would be without knowing in advance.
 
