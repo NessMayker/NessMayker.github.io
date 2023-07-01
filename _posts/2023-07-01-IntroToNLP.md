@@ -15,7 +15,7 @@ The dataset consists of sets of two phrases that have been scored from 0-1 depen
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide1.jpeg title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide1.jpeg class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -30,7 +30,7 @@ Familiar text is often separated word for word like this Cecilia Payne-Gaposchki
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide2.jpeg title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide2.jpeg class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -47,7 +47,7 @@ The results show that as the model trains it performs slightly better over the f
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide3.jpeg title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide3.jpeg class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -58,7 +58,7 @@ I was surprised that the patentSBERT model did not outperform the dberta3 baseli
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/NLPpatent/Slide4.jpeg title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/NLPpatent/Slide4.jpeg  class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -67,4 +67,5 @@ To improve this model I would first try to look at different learning rates. The
 One thing I have noticed in my very recent explorations into modeling, is that it isn't always clear or intuitive how to adjust a model to improve performance. When my team participated in the CAFA5 kaggle competition last month, we were unable to ever improve on the baseline model and we weren't exactly sure why the model was outperforming all the others that seemed to have a lot more going for them.
 
 I hope that with continued study, I will learn more about model improvement and I hope to develop more intuition about the process.
+
 
