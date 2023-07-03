@@ -126,8 +126,6 @@
 
 <h4>Neural Networks</h4>
 
-<p>Neural networks are computer models that are designed to mimic the human brain. The models are made up of artificial neurons that receive input, process it, and return an output. Each neuron has a weight that determines its impact and these are adjusted as the model is trained. The neural network has a hierarchal structure built from layers that process the information before passing it to the following layer. Neural networks are capable of parallel computing, where many computations are performed simultaneously, making them a very powerful modeling tool.</p>
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -144,6 +142,8 @@
 
     </div>
 </div>
+
+<p>Neural networks are computer models that are designed to mimic the human brain. The models are made up of artificial neurons that receive input, process it, and return an output. Each neuron has a weight that determines its impact and these are adjusted as the model is trained. The neural network has a hierarchal structure built from layers that process the information before passing it to the following layer. Neural networks are capable of parallel computing, where many computations are performed simultaneously, making them a very powerful modeling tool.</p>
 
 <h4>Pumpkin Seeds Dataset</h4>
 
@@ -218,17 +218,17 @@
     </div>
 </div>
 <div class="caption">
-    Exploratory Data Analysis: the different seed classes are marked in orange and blue.
+    Exploratory Data Analysis: different seed classes are marked in orange and blue.
 </div>
 
-<p>Here are the underlying steps of linear model:
-1) Generate random coefficients 
-2) Scale the independent features (area, perimeter, etc) 
-3) Multiply the independent features by the coefficients
-4) Sum the result from step 3 for each seed to predict the probability it is in the class 
-5) Calculate how off the prediction is from the true result
-6) Adjust the coefficients based on how they performed the last cycle
-7) Repeat steps 3-6 until the model’s performance stops improving.</p>
+<p>Here are the underlying steps of our linear model: <br>
+1) Generate random coefficients <br>
+2) Scale the independent features (area, perimeter, etc)<br> 
+3) Multiply the independent features by the coefficients<br>
+4) Sum the result from step 3 for each seed to predict the probability it is in the class <br>
+5) Calculate how off the prediction is from the true result<br>
+6) Adjust the coefficients based on how they performed the last cycle<br>
+7) Repeat steps 3-6 until the model’s performance stops improving.<br></p>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -247,7 +247,7 @@
     </div>
 </div>
 <div class="caption">
-    The features of the dataset and how much they are positively or negatively correllated with the  Ürgüp Sivrisi class.
+    The features of the dataset and how much they are positively or negatively correllated with the Ürgüp Sivrisi class.
 </div>
 
 <p>The first run of our linear model is 63% accurate. Although this is better than the baseline, it isn’t very good. We make a small change where instead of summing up the outputs to make a prediction, we run the sum of the outputs through a function called a “Sigmoid”. This function “squishes” all numbers to have a range of 0-1 and is essential in binary classification problems. When we test our linear model using the sigmoid function the accuracy jumps up to 73.6%.</p>
@@ -256,7 +256,7 @@
 
 <h4>Neural Network Model</h4>
 
-<p>Our neural network is build on top of the linear model. We start by adding a hidden layer in between out input layer and our output layer. This is similar to the left panel of the symbolic image below. Each layer performs a function on the data before passing its results to the following layer. These functions look like step 3 from the linear model, but using many more coefficients. The neural network then updates all the layers of coefficients based on its performance. As before we continue training until the performance stops improving.</p>
+<p>Our neural network is build on top of the linear model. We start by adding a hidden layer in between out input layer and our output layer. This is similar to the left panel of the image below. Each layer performs a function on the data before passing its results to the following layer. These functions look like step 3 from the linear model, but using many more coefficients. Next the neural network updates all the layers of coefficients based on its performance. We continue training until the performance stops improving.</p>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -284,11 +284,11 @@
 
 <p>The difference between a Neural Network and a Deep Learning Neural Network is that the deep learning neural network has more hidden layers. The right panel of the image above is an example of a deep learning neural network.</p>
 
-<p>We added 10 hidden layers to our deep learning neural net model and achieved an accuracy of 86.8%.</p>
+<p>We added 10 hidden layers to our deep learning neural net model and achieved an accuracy of 86.8%, making the deep learning neural net model the most accurate out of the models we looked at so far.</p>
 
 <h4>Comparing to Earlier Models</h4>
 
-<p>When I worked with this dataset before I did a lot of exploratory data analysis to find the features that seemed to be the most important to determining the seed’s class. I used a type of modeling that is similar to the linear model using the sigmoid function and was able to score an accuracy of 76-86% depending on the features I used.</p>
+<p>When I worked with this dataset earlier this year, I did a lot of exploratory data analysis to find the features that seemed to be the most important to determining the seed’s class. I used a type of modeling that is similar to the linear model using the sigmoid function and was able to score an accuracy of 76-86% depending on the features I used.</p>
 
 <p>I then revisited the dataset using several methods of model optimization which are out of the scope of this blog post, but just to say that I was able to boost the accuracy of my linear model to 88.5%, performing better than the deep neural network we just built.</p>
 
