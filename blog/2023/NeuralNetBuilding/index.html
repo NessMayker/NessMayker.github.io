@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Produce Classifier |   Ness Mayker Chen</title>
+    <title>What is a Neural Network? |   Ness Mayker Chen</title>
     <meta name="author" content="  Ness Mayker Chen">
-    <meta name="description" content="A simple image classifier using fast.ai and the fruits360 dataset">
+    <meta name="description" content="Building a Deep Learning Neural Network from Scratch">
 
 
     <!-- Bootstrap & MDB -->
@@ -37,7 +37,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/ProduceClassifier/">
+    <link rel="canonical" href="https://nessmayker.github.io/NessMaykerChen.github.io//blog/2023/NeuralNetBuilding/">
 
     <!-- Dark Mode -->
     
@@ -101,17 +101,15 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Produce Classifier</h1>
-    <p class="post-meta">June 29, 2023</p>
+    <h1 class="post-title">What is a Neural Network?</h1>
+    <p class="post-meta">July 3, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
         <a href="/blog/tag/deeplearning">
           <i class="fas fa-hashtag fa-sm"></i> DeepLearning</a>  
-          <a href="/blog/tag/fastai">
-          <i class="fas fa-hashtag fa-sm"></i> fastai</a>  
-          <a href="/blog/tag/imageclassification">
-          <i class="fas fa-hashtag fa-sm"></i> ImageClassification</a>  
+          <a href="/blog/tag/neuralnetwork">
+          <i class="fas fa-hashtag fa-sm"></i> NeuralNetwork</a>  
           
         ·  
         <a href="/blog/category/deeplearning">
@@ -124,30 +122,177 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>I’m currently taking the <a href="https://course.fast.ai/" rel="external nofollow noopener" target="_blank">“Practical Deep Learning for Coders”</a> course from fast.ai and I have been so excited to practice what I have been learning.</p>
+      <p>In the most recent lesson from fast.ai’s Practical Deep Learning for Coders, we built a neural network from scratch.</p>
 
-<p>For this project I am expanding on the Dog vs Cat classifier, instead training a model to classify fruit using the Fruits 360 dataset as my training data.</p>
+<h4>Neural Networks</h4>
 
-<!-- <script type= "module"
-src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
-</script>
+<p>Neural networks are computer models that are designed to mimic the human brain. The models are made up of artificial neurons that receive input, process it, and return an output. Each neuron has a weight that determines its impact and these are adjusted as the model is trained. The neural network has a hierarchal structure built from layers that process the information before passing it to the following layer. Neural networks are capable of parallel computing, where many computations are performed simultaneously, making them a very powerful modeling tool.</p>
 
-<gradio-app src="https://nessmaykerchen-produceclassifier.hf.space/"></gradio-app> -->
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
 
-<iframe src="https://nessmaykerchen-produceclassifier.hf.space/" frameborder="0" width="850" height="550"></iframe>
+  <picture>
+    
 
-<p>The fruits360 data set consists of 131 types of produce that are placed on a white background and have many images captured at different angles for each object. This is a decently sized training set with a total of 67,692 images, but the training set lacks diversity of different backgrounds and different groupings of multiple fruits.</p>
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/pumpkin/neuron.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
-<p>To save time, I made a very basic model using the ResNet34 archetecture with a batch size of 16 and only one round of fine-tuning.</p>
+  </picture>
 
-<p>The first six example images are taken from the testing set, which the model was not allowed to interact with. As you can see the model performs brilliantly when tested with the same population of produce imaged with the same background.</p>
+</figure>
 
-<p>The last two images are from a purple sweet potato I had at home. I tried to reproduce the white background for the first image, but it does have a different white balance. For the second image I used a noisy background to test how different the results would be. For the first sweet potato image, the model is split between 10 types of produce, with a preference toward labeling it as a red potato. Surprisingly, the model performed better for the second image with a split between only two types with a high certainty that it is a red potato. This is overall a good approximation considering there were no purple sweet potatoes in the training set.</p>
+    </div>
+</div>
 
-<p>The classifier performs much better when the images are very closely related to those in the training set. I am curious to know if the largest room for improvement in the model could be found by using a deeper neural net, or by introducing more diversity in the training set.</p>
+<h4>Pumpkin Seeds Dataset</h4>
 
-<p>I definitely want to play around with this more in the future. For now, I need to pivot to NLP to keep up with the fast.ai course. :)</p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
 
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/pumpkin/dataset.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    The Pumpkin Seeds dataset.
+</div>
+
+<p>For this project I used the Pumpkin Seeds dataset from Kaggle. This dataset consists of different measurements of pumpkin seeds such as area, perimeter, and roundness, and whether they belong to one of two classes (‘Ürgüp Sivrisi’ and ‘Çerçevelik’). The goal is to build a model that can predict if a pumpkin seed is in the first or second class.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/pumpkin/pumpkinSeeds.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    The two classes of Pumpkin Seeds.
+</div>
+
+<p>I chose this dataset because the end prediction is a simple binary one; the neural network only has to sort the seed into one of two classes. I am familiar with the dataset because I used it to learn logistic regression modeling during the Erdös Institute’s data science bootcamp, and I wanted to be able to compare the performance between the different models.</p>
+
+<h4>Baseline Model</h4>
+
+<p>We will need something to compare all of our models to. This is called the “baseline model”. Because this problem has only two possible solutions, we can rephrase the problem to predict if the seed is in the Ürgüp Sivrisi class. In the training set 48% percent of the seeds are Ürgüp Sivrisi. Because there are less of this class than the other, we can just predict that the seed will never be in this class. Now, this seems pretty drastic, but if we always predict that the seed will never be in the class Ürgüp Sivrisi we will be right 52% of the time. Obviously this is not a good model, we just want something to compare our future models performances to.</p>
+
+<h4>Simple Linear Model</h4>
+
+<p>Next, we start with a simple linear model and incrementally added more complexity until we build our deep learning neural network.</p>
+
+<p>For the linear model we try to determine the liner relationship that each feature of the dataset has with the type of seed. From the plot below we can see that the two classes of seeds have overall distinct features, although there is overlap within the sample.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/pumpkin/pairplot.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Exploratory Data Analysis: the different seed classes are marked in orange and blue.
+</div>
+
+<p>Here are the underlying steps of linear model:
+1) Generate random coefficients 
+2) Scale the independent features (area, perimeter, etc) 
+3) Multiply the independent features by the coefficients
+4) Sum the result from step 3 for each seed to predict the probability it is in the class 
+5) Calculate how off the prediction is from the true result
+6) Adjust the coefficients based on how they performed the last cycle
+7) Repeat steps 3-6 until the model’s performance stops improving.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/pumpkin/features.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    The features of the dataset and how much they are positively or negatively correllated with the  Ürgüp Sivrisi class.
+</div>
+
+<p>The first run of our linear model is 63% accurate. Although this is better than the baseline, it isn’t very good. We make a small change where instead of summing up the outputs to make a prediction, we run the sum of the outputs through a function called a “Sigmoid”. This function “squishes” all numbers to have a range of 0-1 and is essential in binary classification problems. When we test our linear model using the sigmoid function the accuracy jumps up to 73.6%.</p>
+
+<p>Lets see if we can do better with a neural net!</p>
+
+<h4>Neural Network Model</h4>
+
+<p>Our neural network is build on top of the linear model. We start by adding a hidden layer in between out input layer and our output layer. This is similar to the left panel of the symbolic image below. Each layer performs a function on the data before passing its results to the following layer. These functions look like step 3 from the linear model, but using many more coefficients. The neural network then updates all the layers of coefficients based on its performance. As before we continue training until the performance stops improving.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/pumpkin/neuralNet.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Model of a neural network, image taken from https://cs231n.github.io/neural-networks-1/.
+</div>
+
+<p>Our Neural Network model scored an accuracy of 83.8%. This is a 10% improvement over our linear model!</p>
+
+<h4>Deep Learning Neural Network</h4>
+
+<p>The difference between a Neural Network and a Deep Learning Neural Network is that the deep learning neural network has more hidden layers. The right panel of the image above is an example of a deep learning neural network.</p>
+
+<p>We added 10 hidden layers to our deep learning neural net model and achieved an accuracy of 86.8%.</p>
+
+<h4>Comparing to Earlier Models</h4>
+
+<p>When I worked with this dataset before I did a lot of exploratory data analysis to find the features that seemed to be the most important to determining the seed’s class. I used a type of modeling that is similar to the linear model using the sigmoid function and was able to score an accuracy of 76-86% depending on the features I used.</p>
+
+<p>I then revisited the dataset using several methods of model optimization which are out of the scope of this blog post, but just to say that I was able to boost the accuracy of my linear model to 88.5%, performing better than the deep neural network we just built.</p>
+
+<p>This is just to show that there are many ways to model a problem and you don’t always have to use a computationally expensive one to get a good result.</p>
 
     </div>
   </article>
@@ -166,13 +311,13 @@ src = "https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js">
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/NeuralNetBuilding/">What is a Neural Network?</a>
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/IntroToNLP/">Intro to Natural Language Processing (NLP)</a>
   </li>
 
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/IntroToNLP/">Intro to Natural Language Processing (NLP)</a>
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/ProduceClassifier/">Produce Classifier</a>
   </li>
 
   
